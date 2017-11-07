@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+			location="E:/repo-zg/com/oracle/ojdbc6/11.2.0.1.0/ojdbc6-11.2.0.1.0.jar"></classPathEntry>
+
+	<context id="context1">
+		<commentGenerator>
+		    <property name="suppressDate" value="true"/>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@10.0.2.27:1521:orcl" userId="UA_BILL_DEV" password="UA_BILL_DEV" />
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.jsy.cn.entity"
+							targetProject="D:/workspace-2017/baseFrameDemo/src/main/java" />
+		<!-- mapper接口存放目录 -->
+		<sqlMapGenerator targetPackage="com.jsy.cn.mapper"
+						 targetProject="D:/workspace-2017/baseFrameDemo/src/main/java" />
+		<javaClientGenerator  targetPackage="com.jsy.cn.dao"
+							  targetProject="D:/workspace-2017/baseFrameDemo/src/main/java" type="XMLMAPPER"   />
+
+		<!-- 配置不生成Exmaple文件 -->
+		<table tableName="tuser" domainObjectName="User"
+			   enableCountByExample="false" enableUpdateByExample="false"
+			   enableDeleteByExample="false" enableSelectByExample="false"
+			   selectByExampleQueryId="false">
+		</table>
+		<table tableName="tstaff" domainObjectName="Staff"
+			   enableCountByExample="false" enableUpdateByExample="false"
+			   enableDeleteByExample="false" enableSelectByExample="false"
+			   selectByExampleQueryId="false">
+		</table>
+
+	</context>
+</generatorConfiguration>
