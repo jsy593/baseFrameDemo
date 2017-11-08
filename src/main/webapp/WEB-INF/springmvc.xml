@@ -58,6 +58,6 @@
 			<bean class="com.jsy.cn.interceptor.BaseInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
-	<!-- 切面配置略 -->
-<!-- 	<aop:aspectj-autoproxy/> -->
+	<!-- 切面配置 -->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
 </beans>
